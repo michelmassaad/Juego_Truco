@@ -1,0 +1,37 @@
+name: Compilar para Linux
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar Python 3.9
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+
+      - name: 3. Instalar dependencias del sistema y Python
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: 4. Compilar el juego
+        run: |
+          python -m PyInstaller --onefile --windowed --name "JuegoTruco" --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
+      
+      - name: 5. Empaquetar el ejecutable
+        run: zip -r JuegoTruco-linux.zip dist/JuegoTruco
+      
+      - name: 6. Subir el archivo a la Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: JuegoTruco-linux.zip
