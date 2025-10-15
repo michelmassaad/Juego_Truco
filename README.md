@@ -29,7 +29,7 @@ Este proyecto fue creado como trabajo práctico para la materia **Programación 
 
 Tienes dos opciones. **Te recomendamos descargar el archivo `.zip`** para evitar advertencias de seguridad.
 
-1.  Descarga el archivo `1-JuegoTruco-windows.zip`.
+1.  Descarga el archivo `* [**1-JuegoTruco-windows.zip (Recomendado)**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/1-JuegoTruco-windows.zip)`.
 2.  Haz clic derecho sobre el archivo y selecciona **"Extraer todo..."** para descomprimirlo en una carpeta.
 3.  ¡Listo\! Abre la nueva carpeta y haz doble clic en `JuegoTruco.exe` para jugar.
 
