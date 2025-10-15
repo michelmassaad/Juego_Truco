@@ -1,18 +1,15 @@
 name: Compilar Juego para Múltiples Plataformas
 
-# Se activa cada vez que creas una nueva "Release" en GitHub
 on:
   release:
     types: [created]
 
 jobs:
   build:
-    # Usamos una "matriz" para ejecutar el mismo trabajo en diferentes sistemas operativos
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
 
-    # Le decimos a GitHub en qué tipo de máquina virtual correr
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -36,6 +33,8 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: 4. Compilar el juego con PyInstaller
+      # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! 👇
+      shell: bash
       run: |
         # Definimos el nombre del ícono dependiendo del SO
         ICON_PATH="cartas/1-de-espada.ico"
