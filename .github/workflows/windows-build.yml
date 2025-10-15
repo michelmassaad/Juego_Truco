@@ -33,7 +33,9 @@ jobs:
       - name: 5. Empaquetar el ejecutable
         run: Compress-Archive -Path dist/JuegoTruco.exe -DestinationPath JuegoTruco-windows.zip
       
-      - name: 6. Subir el archivo a la Release
+      - name: 6. Subir los archivos a la Release
         uses: softprops/action-gh-release@v1
         with:
-          files: JuegoTruco-windows.zip
+          files: |
+            JuegoTruco-windows.zip
+            dist/JuegoTruco.exe
