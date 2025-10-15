@@ -24,7 +24,6 @@ Este proyecto fue creado como trabajo práctico para la materia **Programación 
 1.  **Ve a la página de [Releases](https://www.google.com/search?q=https://github.com/michelmassaad/Juego_Truco/releases/latest) para descargar el juego.**
 2.  Busca el archivo que corresponda a tu sistema operativo a continuación:
 
------
 
 ### 🪟 Para Windows
 
@@ -36,7 +35,6 @@ Tienes dos opciones. **Te recomendamos descargar el archivo `.zip`** para evitar
 
 *(Alternativa: puedes descargar `2-JuegoTruco-windows.exe` directamente, pero es probable que Windows muestre una advertencia de seguridad que deberás ignorar.)*
 
------
 
 ###  Para macOS
 
@@ -45,7 +43,6 @@ Tienes dos opciones. **Te recomendamos descargar el archivo `.zip`** para evitar
 3.  **Importante:** La primera vez que lo abras, es posible que macOS te impida hacerlo. Haz **clic derecho** sobre `JuegoTruco.app` y selecciona **"Abrir"**. Te aparecerá una ventana de confirmación donde podrás volver a hacer clic en "Abrir". Solo necesitas hacer esto una vez.
 4.  ¡A jugar\!
 
------
 
 ### 🐧 Para Linux (Ubuntu/Debian)
 
@@ -59,6 +56,9 @@ Te recomendamos descargar el archivo `.zip`.
     chmod +x JuegoTruco
     ```
 5.  ¡Listo\! Ejecuta el juego desde la terminal con `./JuegoTruco` o haciendo doble clic sobre el archivo.
+
+
+-----
 
 ## 🚀 Para Desarrolladores
 
@@ -114,6 +114,8 @@ Este proyecto fue construido aplicando los siguientes conceptos y herramientas:
   * **Paradigma:** Programación Funcional.
   * **Estructuras de Datos:** Uso intensivo de listas, diccionarios y tuplas para gestionar la lógica del juego.
   * **Manejo de Archivos:** Lectura y escritura de archivos `.csv` para la persistencia de datos.
+
+-----
 
 ## 📜 Última Versión
 
