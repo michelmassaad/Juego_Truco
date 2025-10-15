@@ -29,16 +29,16 @@ Este proyecto fue creado como trabajo práctico para la materia **Programación 
 
 Tienes dos opciones. **Te recomendamos descargar el archivo `.zip`** para evitar advertencias de seguridad.
 
-1.  Descarga el archivo * [**1-JuegoTruco-windows.zip (Recomendado)**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/1-JuegoTruco-windows.zip).
+1.  Descarga el archivo [**1-JuegoTruco-windows.zip (Recomendado)**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/1-JuegoTruco-windows.zip).
 2.  Haz clic derecho sobre el archivo y selecciona **"Extraer todo..."** para descomprimirlo en una carpeta.
 3.  ¡Listo\! Abre la nueva carpeta y haz doble clic en `JuegoTruco.exe` para jugar.
 
-*(Alternativa: puedes descargar `2-JuegoTruco-windows.exe` directamente, pero es probable que Windows muestre una advertencia de seguridad que deberás ignorar.)*
+*(Alternativa: puedes descargar [**2-JuegoTruco.exe (Directo)**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/2-JuegoTruco-windows.exe) directamente, pero es probable que Windows muestre una advertencia de seguridad que deberás ignorar.)*
 
 
 ###  Para macOS
 
-1.  Descarga el archivo `3-JuegoTruco-macos.zip`.
+1.  Descarga el archivo [**3-JuegoTruco-macos.zip**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/3-JuegoTruco-macos.zip).
 2.  Haz doble clic en el archivo `.zip` para descomprimirlo. Se creará la aplicación `JuegoTruco.app`.
 3.  **Importante:** La primera vez que lo abras, es posible que macOS te impida hacerlo. Haz **clic derecho** sobre `JuegoTruco.app` y selecciona **"Abrir"**. Te aparecerá una ventana de confirmación donde podrás volver a hacer clic en "Abrir". Solo necesitas hacer esto una vez.
 4.  ¡A jugar\!
@@ -48,7 +48,7 @@ Tienes dos opciones. **Te recomendamos descargar el archivo `.zip`** para evitar
 
 Te recomendamos descargar el archivo `.zip`.
 
-1.  Descarga el archivo `4-JuegoTruco-linux.zip`.
+1.  Descarga el archivo [**4-JuegoTruco-linux.zip (Recomendado)**](https://github.com/michelmassaad/Juego_Truco/releases/latest/download/4-JuegoTruco-linux.zip).
 2.  Descomprime el archivo donde prefieras.
 3.  Abre una terminal en la carpeta donde descomprimiste el juego.
 4.  Dale permisos de ejecución al archivo con el siguiente comando:
