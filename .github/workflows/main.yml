@@ -26,11 +26,13 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
-        pip install -r requirements.txt
+        # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! 👇
+        python -m pip install -r requirements.txt
 
     - name: 3. Instalar dependencias (Windows & macOS)
       if: matrix.os != 'ubuntu-latest'
-      run: pip install -r requirements.txt
+      # 👇 ¡Y AQUÍ TAMBIÉN! 👇
+      run: python -m pip install -r requirements.txt
 
     - name: 4. Compilar el juego con PyInstaller
       shell: bash
@@ -41,7 +43,6 @@ jobs:
           ICON_PATH="cartas/1-de-espada.icns"
         fi
         
-        # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! Usamos "python -m PyInstaller" 👇
         python -m PyInstaller --onefile --windowed --name "JuegoTruco" --icon "$ICON_PATH" \
         --add-data "cartas:cartas" \
         --add-data "audio:audio" \
