@@ -21,7 +21,7 @@ Este proyecto fue creado como trabajo práctico para la materia **Programación 
 ## 🎮 ¿Cómo Jugar? (¡La forma fácil\!)
 ¡No necesitas instalar nada\! Sigue los pasos para tu sistema operativo y empieza a jugar en segundos.
 
-1.  **Ve a la página de [Releases](https://www.google.com/search?q=https://github.com/michelmassaad/Juego_Truco/releases/latest) para descargar el juego.**
+1.  **Ve a la página de [Releases](https://github.com/michelmassaad/Juego_Truco/releases/tag/v1.0) para descargar el juego.**
 2.  Busca el archivo que corresponda a tu sistema operativo a continuación:
 
 
