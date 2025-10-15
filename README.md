@@ -1,68 +1,45 @@
-# Juego de Truco Argentino - Trabajo Práctico
+# Juego de Truco Argentino 🃏
 
-Este proyecto fue desarrollado como parte del trabajo práctico de la materia **Programación I** de la **Tecnicatura Universitaria en Programación** en la **Universidad Tecnológica Nacional (UTN), Facultad Regional Avellaneda**.
+[](https://www.python.org/) [](https://www.pygame.org/) [](https://www.google.com/search?q=)
 
-El objetivo fue desarrollar una versión del juego de cartas **Truco** para dos jugadores (un jugador contra la máquina), aplicando los conceptos de la programación funcional y la librería Pygame.
+¡Bienvenido al Truco Argentino\! Un clásico juego de cartas desarrollado en Python con Pygame, donde te enfrentarás a un oponente controlado por la computadora.
 
-## Descripción del Juego
+Este proyecto fue creado como trabajo práctico para la materia **Programación I** de la **Tecnicatura Universitaria en Programación** en la **UTN-FRA**.
 
-El juego implementa una partida de Truco a 15 o 30 puntos, donde el usuario se enfrenta a un oponente controlado por la computadora. El sistema registra el nombre del jugador y actualiza un historial de puntajes al finalizar cada partida.
+-----
 
-### Modos de Oponente
+## ✨ Características Principales
 
-Se puede elegir entre dos tipos de oponentes, cada uno con una lógica de juego distinta:
+  * **Partidas Clásicas:** Juega partidas a 15 o 30 puntos.
+  * **Oponente con IA:** Elige entre dos dificultades:
+      * 🤖 **Aleatorio:** Un oponente impredecible que juega sus cartas al azar y siempre acepta los desafíos de envido.
+      * 🧠 **Inteligente:** Un oponente más estratégico que juega su carta más alta para ganar la mano y solo canta envido si tiene buenos puntos.
+  * **Lógica de Truco Completa:** Desafía a la máquina con Truco, Retruco y Vale 4.
+  * **Historial de Partidas:** Tu nombre y puntaje se guardan automáticamente en un archivo `.csv` para llevar un registro de tus hazañas.
 
-1.  **Oponente Aleatorio:**
-    -   Juega sus cartas de forma completamente aleatoria.
-    -   **Envido:** Si tiene envido (dos cartas del mismo palo), siempre lo canta. Si le cantan envido, siempre lo acepta. Si tiene más de 30 puntos de envido, canta "falta envido".
+-----
 
-2.  **Oponente Inteligente:**
-    -   **Truco:** Si juega primero, siempre juega su carta más alta. Si juega segundo y tiene una carta para empatar o ganar la mano, la juega; de lo contrario, juega su carta más baja.
-    -   **Envido:** Solo canta o acepta un envido si su puntaje es superior a 27 puntos.
+## 🎮 ¿Cómo Jugar? (¡La forma fácil\!)
 
-### Estado Actual del Proyecto
+¡No necesitas instalar nada\! Descarga el ejecutable y empieza a jugar en segundos.
 
--   [x] Lógica del **Truco** en todas sus variantes (Truco, Retruco, Vale 4).
--   [x] Elección de oponente (Aleatorio o Inteligente).
--   [x] Selección de puntaje máximo (15 o 30 puntos).
--   [x] Sistema de historial de puntajes guardado en `archivos/historial.csv`.
--   [ ] **Funcionalidad del Envido:** La lógica del envido está parcialmente implementada y se encuentra en desarrollo.
+1.  **[Haz clic aquí para ir a Releases](https://github.com/michelmassaad/Juego_Truco/releases)**.
+2.  Busca la última versión (`Latest`) y descarga el archivo `.exe`.
+3.  Descomprime el archivo donde quieras.
+4.  ¡Listo\! Ejecuta el archivo `Juego_Truco.exe` y a jugar.
 
-## Contenidos y Tecnologías Aplicadas
+-----
 
-Para cumplir con las condiciones de aprobación del trabajo práctico, se aplicaron los siguientes conceptos:
+## 🚀 Para Desarrolladores
 
--   **Manejo avanzado de TDA:** Uso de listas, diccionarios, sets y tuplas para gestionar la baraja, las manos de los jugadores y el estado del juego.
--   **Manejo de strings:** Para la interacción con el usuario y la presentación de información.
--   **Lectura y escritura de archivos:** Para la persistencia del historial de puntajes en formato `.csv`.
--   **Paradigma funcional:** Se priorizó el uso de funciones puras y la modularización del código.
--   **Pygame:** Para la interfaz gráfica, se implementaron los siguientes elementos:
-    -   Ciclo de vida del juego y manejo de eventos.
-    -   Configuraciones de pantalla y posicionamiento de elementos.
-    -   Carga y manipulación de imágenes y superficies.
-    -   Uso de sonidos para mejorar la experiencia de usuario.
-    -   Manejo de colisiones para la interacción con botones y cartas.
+Si quieres modificar el código o simplemente ejecutarlo desde la fuente, sigue estos pasos.
 
-## ¿Cómo Jugar?
-
-### Opción 1: Descargando el Juego (Recomendado)
-
-La forma más sencilla de jugar, sin necesidad de instalar Python ni ninguna dependencia.
-
-1.  **Ve a la sección de [Releases](https://github.com/tu-usuario/tu-repositorio/releases) de este repositorio.** 
-    *(Nota: Reemplaza `tu-usuario/tu-repositorio` con la URL correcta de tu proyecto si es necesario).*
-2.  Descarga el archivo `.zip` de la última versión (por ejemplo, `Truco_v1.0.zip`).
-3.  Descomprime el archivo en tu computadora.
-4.  Abre la carpeta resultante y haz doble clic en `main.exe` para jugar.
-
-### Opción 2: Ejecutando desde el Código Fuente
-
-Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pasos.
+### Ejecutar desde el código fuente
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone <URL-del-repositorio>
-    cd <nombre-del-repositorio>
+    git clone https://github.com/michelmassaad/Juego_Truco.git
+    cd Juego_Truco
     ```
 2.  **Instala las dependencias:**
     ```bash
@@ -73,18 +50,37 @@ Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pa
     python main.py
     ```
 
-## Para Desarrolladores: Crear tu Propio Ejecutable
+### Crear tu propio ejecutable
 
-Si has hecho cambios en el código y quieres compilar tu propia versión del archivo `.exe`, puedes hacerlo usando **PyInstaller**.
+Puedes compilar tu propia versión del juego usando **PyInstaller**.
 
 1.  **Instala PyInstaller:**
     ```bash
     pip install pyinstaller
     ```
-
-2.  **Ejecuta el comando de compilación:**
+2.  **Ejecuta el comando de compilación desde la raíz del proyecto:**
     ```bash
     pyinstaller --onefile --windowed --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
     ```
+3.  Tu nuevo ejecutable estará en la carpeta `dist/`.
 
-3.  El archivo `main.exe` se actualizará o creará en la carpeta `dist`.
+-----
+
+## 📈 Estado del Proyecto
+
+  * ✅ Lógica completa de **Truco**, **Retruco** y **Vale 4**.
+  * ✅ Elección de oponente y puntaje máximo.
+  * ✅ Sistema de historial de puntajes funcionales.
+  * 🚧 **Lógica del Envido:** En desarrollo (parcialmente implementada).
+
+-----
+
+## 🛠️ Tecnologías Utilizadas
+
+Este proyecto fue construido aplicando los siguientes conceptos y herramientas:
+
+  * **Lenguaje:** Python
+  * **Librería Gráfica:** Pygame para la interfaz, manejo de eventos, imágenes y sonidos.
+  * **Paradigma:** Programación Funcional.
+  * **Estructuras de Datos:** Uso intensivo de listas, diccionarios y tuplas para gestionar la lógica del juego.
+  * **Manejo de Archivos:** Lectura y escritura de archivos `.csv` para la persistencia de datos.
