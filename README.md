@@ -20,15 +20,6 @@ Este proyecto fue creado como trabajo práctico para la materia **Programación 
 -----
 
 ## 🎮 ¿Cómo Jugar? (¡La forma fácil\!)
-
-¡Claro\! Ahora que ofreces múltiples archivos, la sección de "Cómo Jugar" debe ser una guía clara para que el usuario elija el archivo correcto para su sistema operativo.
-
-Aquí tienes una versión mucho más clara y detallada, lista para copiar y pegar en tu `README.md`.
-
------
-
-## 🎮 ¿Cómo Jugar?
-
 ¡No necesitas instalar nada\! Sigue los pasos para tu sistema operativo y empieza a jugar en segundos.
 
 1.  **Ve a la página de [Releases](https://www.google.com/search?q=https://github.com/michelmassaad/Juego_Truco/releases/latest) para descargar el juego.**
