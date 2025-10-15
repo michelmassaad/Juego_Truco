@@ -1,0 +1,32 @@
+name: Actualizar README con la Última Release
+
+on:
+  release:
+    types: [published] # Se activa solo cuando publicas una release
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # ¡Muy importante! Le da permiso a la acción para escribir en tu repo
+
+    steps:
+      - name: 1. Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Actualizar la sección de Release en el README
+        uses: c-hive/replace-text-in-file@v1
+        with:
+          file: README.md
+          from: '[\s\S]*'
+          to: |
+            ### [${{ github.event.release.name }}](${{ github.event.release.html_url }})
+            *Publicado el: ${{ steps.date.outputs.date }}*
+
+            ${{ github.event.release.body }}
+
+            - name: 3. Guardar los cambios en el repositorio
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: Actualizar README con notas de la release ${{ github.event.release.tag_name }}'
+          file_pattern: README.md
