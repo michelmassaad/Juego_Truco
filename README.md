@@ -45,7 +45,19 @@ Para cumplir con las condiciones de aprobación del trabajo práctico, se aplica
 
 ## ¿Cómo Jugar?
 
-### Ejecutando desde el Código Fuente
+Tienes dos maneras de disfrutar del juego:
+
+### Opción 1: Usando el Ejecutable (Recomendado)
+
+La forma más sencilla de jugar. No necesitas instalar nada.
+
+1.  Descarga o clona este repositorio.
+2.  Navega a la carpeta `dist/`.
+3.  Haz doble clic en el archivo `main.exe` y ¡a jugar!
+
+### Opción 2: Ejecutando desde el Código Fuente
+
+Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pasos.
 
 1.  **Clona el repositorio:**
     ```bash
@@ -61,16 +73,18 @@ Para cumplir con las condiciones de aprobación del trabajo práctico, se aplica
     python main.py
     ```
 
-### Creando un Ejecutable (Windows)
+## Para Desarrolladores: Crear tu Propio Ejecutable
 
-Para compilar un archivo `.exe` que no requiera tener Python instalado:
+Si has hecho cambios en el código y quieres compilar tu propia versión del archivo `.exe`, puedes hacerlo usando **PyInstaller**.
 
 1.  **Instala PyInstaller:**
     ```bash
     pip install pyinstaller
     ```
+
 2.  **Ejecuta el comando de compilación:**
     ```bash
     pyinstaller --onefile --windowed --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
     ```
-3.  El archivo `main.exe` estará disponible en la carpeta `dist`.
+
+3.  El archivo `main.exe` se actualizará o creará en la carpeta `dist`.
