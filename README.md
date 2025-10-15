@@ -114,3 +114,14 @@ Este proyecto fue construido aplicando los siguientes conceptos y herramientas:
   * **Paradigma:** Programación Funcional.
   * **Estructuras de Datos:** Uso intensivo de listas, diccionarios y tuplas para gestionar la lógica del juego.
   * **Manejo de Archivos:** Lectura y escritura de archivos `.csv` para la persistencia de datos.
+
+## 📜 Última Versión
+
+### [v1.0 - ¡Juego Implementado!](https://github.com/michelmassaad/Juego_Truco/releases/tag/v1.0)
+*Publicado el: 15 de octubre de 2025*
+
+¡Gran actualización! Finalmente, la lógica del **Juego** está funcionando.
+
+* Lógica completa de Truco, Retruco y Vale 4.
+* Elección de oponente y puntaje máximo.
+* Sistema de historial de puntajes funcionales.
