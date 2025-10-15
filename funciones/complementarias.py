@@ -1,20 +1,9 @@
-import os
-import sys
 from informacion.colores import BLANCO
 from informacion.pantalla import ANCHO, PANTALLA
 from funciones.dibujo_pygame import dibujar_texto
 import pygame as pg
+from funciones.utilidades import resource_path
 
-
-def resource_path(relative_path):
-    """ Obtiene la ruta absoluta al recurso, funciona para desarrollo y para PyInstaller """
-    try:
-        # PyInstaller crea una carpeta temporal y almacena la ruta en _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
 
 RUTA_ARCHIVO = resource_path("archivos/historial.csv")  # Archivo donde se guardan los puntajes
 

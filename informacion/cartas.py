@@ -1,6 +1,6 @@
 
 import pygame as pg
-from funciones.complementarias import resource_path
+from funciones.utilidades import resource_path
 
 #Crear Jerarquia de Cartas
 # cartas

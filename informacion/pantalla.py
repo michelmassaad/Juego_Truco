@@ -4,7 +4,7 @@ ANCHO = 900
 ALTO = 600
 TAMANIO_PANTALLA = (ANCHO,ALTO)
 
-from funciones.complementarias import resource_path
+from funciones.utilidades import resource_path
 
 #Creo pantalla
 PANTALLA = pg.display.set_mode(TAMANIO_PANTALLA)

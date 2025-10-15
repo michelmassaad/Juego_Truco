@@ -1,5 +1,5 @@
 import pygame as pg
-from funciones.complementarias import resource_path
+from funciones.utilidades import resource_path
 
 # Cargar la música de fondo
 sonido_barajear = pg.mixer.Sound(resource_path("audio/sonido_lanzar_carta.wav"))
