@@ -6,6 +6,9 @@ on:
 
 jobs:
   build-macos:
+    # 👇 AÑADIMOS ESTA SECCIÓN DE PERMISOS 👇
+    permissions:
+      contents: write
     runs-on: macos-latest
 
     steps:
@@ -23,8 +26,9 @@ jobs:
           python -m pip install -r requirements.txt
 
       - name: 4. Compilar el juego
+        # 👇 ARREGLAMOS LA SINTAXIS AQUÍ ( : en lugar de ; ) 👇
         run: |
-          python -m PyInstaller --onefile --windowed --name "JuegoTruco" --icon "cartas/1-de-espada.icns" --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
+          python -m PyInstaller --onefile --windowed --name "JuegoTruco" --icon "cartas/1-de-espada.icns" --add-data "cartas:cartas" --add-data "audio:audio" --add-data "archivos:archivos" main.py
       
       - name: 5. Empaquetar la aplicación
         run: zip -r JuegoTruco-macos.zip dist/JuegoTruco.app
