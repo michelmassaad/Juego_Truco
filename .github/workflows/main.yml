@@ -33,17 +33,16 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: 4. Compilar el juego con PyInstaller
-      # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! 👇
       shell: bash
       run: |
         # Definimos el nombre del ícono dependiendo del SO
         ICON_PATH="cartas/1-de-espada.ico"
         if [ "${{ matrix.os }}" == "macos-latest" ]; then
-          # Mac usa .icns, necesitarías crear este archivo y subirlo
           ICON_PATH="cartas/1-de-espada.icns"
         fi
         
-        pyinstaller --onefile --windowed --name "JuegoTruco" --icon "$ICON_PATH" \
+        # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! Usamos "python -m PyInstaller" 👇
+        python -m PyInstaller --onefile --windowed --name "JuegoTruco" --icon "$ICON_PATH" \
         --add-data "cartas:cartas" \
         --add-data "audio:audio" \
         --add-data "archivos:archivos" \
