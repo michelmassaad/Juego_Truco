@@ -45,15 +45,15 @@ Para cumplir con las condiciones de aprobación del trabajo práctico, se aplica
 
 ## ¿Cómo Jugar?
 
-Tienes dos maneras de disfrutar del juego:
+### Opción 1: Descargando el Juego (Recomendado)
 
-### Opción 1: Usando el Ejecutable (Recomendado)
+La forma más sencilla de jugar, sin necesidad de instalar Python ni ninguna dependencia.
 
-La forma más sencilla de jugar. No necesitas instalar nada.
-
-1.  Descarga o clona este repositorio.
-2.  Navega a la carpeta `dist/`.
-3.  Haz doble clic en el archivo `main.exe` y ¡a jugar!
+1.  **Ve a la sección de [Releases](https://github.com/tu-usuario/tu-repositorio/releases) de este repositorio.** 
+    *(Nota: Reemplaza `tu-usuario/tu-repositorio` con la URL correcta de tu proyecto si es necesario).*
+2.  Descarga el archivo `.zip` de la última versión (por ejemplo, `Truco_v1.0.zip`).
+3.  Descomprime el archivo en tu computadora.
+4.  Abre la carpeta resultante y haz doble clic en `main.exe` para jugar.
 
 ### Opción 2: Ejecutando desde el Código Fuente
 
