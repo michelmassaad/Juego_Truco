@@ -60,8 +60,7 @@ Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pa
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone <URL-del-repositorio>
-    cd <nombre-del-repositorio>
+    git clone [<URL-del-repositorio>](https://github.com/michelmassaad/Juego_Truco)
     ```
 2.  **Instala las dependencias:**
     ```bash
