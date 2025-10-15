@@ -2,9 +2,10 @@ from informacion.colores import BLANCO
 from informacion.pantalla import ANCHO, PANTALLA
 from funciones.dibujo_pygame import dibujar_texto
 import pygame as pg
+from funciones.utilidades import resource_path
 
 
-RUTA_ARCHIVO = "archivos/historial.csv"  # Archivo donde se guardan los puntajes
+RUTA_ARCHIVO = resource_path("archivos/historial.csv")  # Archivo donde se guardan los puntajes
 
 def leer_historial():
     """leer el historial existente desde el archivo csv."""

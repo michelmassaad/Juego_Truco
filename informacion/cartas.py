@@ -1,12 +1,15 @@
 
+import pygame as pg
+from funciones.utilidades import resource_path
+
 #Crear Jerarquia de Cartas
 # cartas
 from funciones.baraja import *
 PALOS = ("oro", "copa", "espada", "basto")
 VALORES = (1, 2, 3, 4, 5, 6, 7, 10, 11, 12)
-ruta_base_imagenes = "cartas"
+ruta_base_imagenes = resource_path("cartas")
 cantidad_cartas = 3
-reverso_carta = pg.image.load("cartas/reverso_2.jpg")  # Imagen de la carta
+reverso_carta = pg.image.load(resource_path("cartas/reverso_2.jpg"))  # Imagen de la carta
 reverso_carta = pg.transform.scale(reverso_carta, (90, 140))  # Redimensionar carta
 
 jerarquia_truco = {

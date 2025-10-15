@@ -1,6 +1,8 @@
 import random
 import pygame as pg
 
+from funciones.utilidades import resource_path
+
 def crear_carta(palo:tuple, valor:tuple, jerarquia:dict, envido:any, ruta_base:str)->dict:
     '''Crea un diccionario para una cada una de las cartas'''
     return {
@@ -8,7 +10,7 @@ def crear_carta(palo:tuple, valor:tuple, jerarquia:dict, envido:any, ruta_base:s
         "valor": valor,
         "jerarquia": jerarquia,
         "envido": envido,
-        "ruta": f"{ruta_base}/{valor} de {palo}.jpg"
+        "ruta": resource_path(f"{ruta_base}/{valor} de {palo}.jpg")
     }
     
 def crear_baraja(palos:tuple, valores:tuple, jerarquia_truco:dict, ruta:str)-> list:

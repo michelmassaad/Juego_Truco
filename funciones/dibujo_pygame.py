@@ -23,6 +23,8 @@ def dibujar_cartas(pantalla:any, mano:list, coordenadas:tuple, espacio:float, ta
 
         x += ancho + espacio  
         
+from funciones.utilidades import resource_path
+
 def dibujar_cartas_dorso(pantalla:any, mano:list, coordenadas:tuple, espacio:float, tamano:tuple)-> None:
     '''Dibuja el dorso de las cartas en una coordenada pasada por parametro separadas por un espacio,
         verificando que no este elegida, si esta solo se deja el espacio'''
@@ -30,7 +32,7 @@ def dibujar_cartas_dorso(pantalla:any, mano:list, coordenadas:tuple, espacio:flo
     ancho,alto = tamano
     for carta in mano:
         if carta["elegida"] == False:
-            imagen_carta = cargar_imagen_carta("cartas/reverso_2.jpg", tamano)
+            imagen_carta = cargar_imagen_carta(resource_path("cartas/reverso_2.jpg"), tamano)
             pantalla.blit(imagen_carta, (x,y))  # Dibuja la carta
 
         x += ancho + espacio 
