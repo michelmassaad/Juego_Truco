@@ -21,23 +21,20 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: 3. Instalar dependencias (Linux)
-      if: matrix.os == 'ubuntu-latest'
+    # 👇 SECCIÓN DE INSTALACIÓN MEJORADA 👇
+    - name: 3. Instalar dependencias
       run: |
-        sudo apt-get update
-        sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
-        # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN! 👇
+        python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
-
-    - name: 3. Instalar dependencias (Windows & macOS)
-      if: matrix.os != 'ubuntu-latest'
-      # 👇 ¡Y AQUÍ TAMBIÉN! 👇
-      run: python -m pip install -r requirements.txt
+        # Este paso es solo para Linux y no afecta a los demás
+        if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+          sudo apt-get update
+          sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+        fi
 
     - name: 4. Compilar el juego con PyInstaller
       shell: bash
       run: |
-        # Definimos el nombre del ícono dependiendo del SO
         ICON_PATH="cartas/1-de-espada.ico"
         if [ "${{ matrix.os }}" == "macos-latest" ]; then
           ICON_PATH="cartas/1-de-espada.icns"
