@@ -38,4 +38,6 @@ jobs:
       - name: 6. Subir el archivo a la Release
         uses: softprops/action-gh-release@v1
         with:
-          files: JuegoTruco-linux.zip
+          files: |
+            JuegoTruco-linux.zip
+            dist/JuegoTruco
