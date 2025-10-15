@@ -1,5 +1,5 @@
 # Juego de Truco Argentino 🃏
-
+[![Última Release](https://img.shields.io/github/v/release/michelmassaad/Juego_Truco)](https://github.com/michelmassaad/Juego_Truco/releases/latest)
 [](https://www.python.org/) [](https://www.pygame.org/) [](https://www.google.com/search?q=)
 
 ¡Bienvenido al Truco Argentino\! Un clásico juego de cartas desarrollado en Python con Pygame, donde te enfrentarás a un oponente controlado por la computadora.
