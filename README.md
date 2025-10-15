@@ -49,9 +49,11 @@ Para cumplir con las condiciones de aprobación del trabajo práctico, se aplica
 
 La forma más sencilla de jugar, sin necesidad de instalar Python ni ninguna dependencia.
 
-1.  **Ve a la sección de [Releases](https://github.com/joacov04/Juego-Truco/releases) de este repositorio.**
-2.  Busca la última versión y descarga el ejecutable para tu sistema operativo (Windows o Linux).
-3.  Ejecuta el archivo descargado para jugar.
+1.  **Ve a la sección de [Releases](https://github.com/tu-usuario/tu-repositorio/releases) de este repositorio.** 
+    *(Nota: Reemplaza `tu-usuario/tu-repositorio` con la URL correcta de tu proyecto si es necesario).*
+2.  Descarga el archivo `.zip` de la última versión (por ejemplo, `Truco_v1.0.zip`).
+3.  Descomprime el archivo en tu computadora.
+4.  Abre la carpeta resultante y haz doble clic en `main.exe` para jugar.
 
 ### Opción 2: Ejecutando desde el Código Fuente
 
@@ -59,8 +61,8 @@ Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pa
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone https://github.com/joacov04/Juego-Truco.git
-    cd Juego-Truco
+    git clone <URL-del-repositorio>
+    cd <nombre-del-repositorio>
     ```
 2.  **Instala las dependencias:**
     ```bash
@@ -71,21 +73,18 @@ Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pa
     python main.py
     ```
 
-## Para Desarrolladores: Generar una Nueva Release
+## Para Desarrolladores: Crear tu Propio Ejecutable
 
-Este repositorio utiliza **GitHub Actions** para automatizar la creación de ejecutables para Windows y Linux.
+Si has hecho cambios en el código y quieres compilar tu propia versión del archivo `.exe`, puedes hacerlo usando **PyInstaller**.
 
-Para generar una nueva release con tus cambios, sigue estos pasos:
-
-1.  **Crea un tag de versión:**
-    Usa el formato `vX.Y.Z` (por ejemplo, `v1.0.0`, `v1.1.0`).
+1.  **Instala PyInstaller:**
     ```bash
-    git tag v1.0.0
+    pip install pyinstaller
     ```
 
-2.  **Sube el tag al repositorio:**
+2.  **Ejecuta el comando de compilación:**
     ```bash
-    git push origin v1.0.0
+    pyinstaller --onefile --windowed --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
     ```
 
-3.  Al subir el tag, una acción se ejecutará automáticamente, compilando los ejecutables y creando una nueva release con ellos.
+3.  El archivo `main.exe` se actualizará o creará en la carpeta `dist`.
