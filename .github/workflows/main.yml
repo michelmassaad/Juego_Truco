@@ -1,0 +1,74 @@
+name: Compilar Juego para Múltiples Plataformas
+
+# Se activa cada vez que creas una nueva "Release" en GitHub
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    # Usamos una "matriz" para ejecutar el mismo trabajo en diferentes sistemas operativos
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    # Le decimos a GitHub en qué tipo de máquina virtual correr
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: 1. Clonar el repositorio
+      uses: actions/checkout@v4
+
+    - name: 2. Configurar Python 3.9
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.9
+
+    - name: 3. Instalar dependencias (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+        pip install -r requirements.txt
+
+    - name: 3. Instalar dependencias (Windows & macOS)
+      if: matrix.os != 'ubuntu-latest'
+      run: pip install -r requirements.txt
+
+    - name: 4. Compilar el juego con PyInstaller
+      run: |
+        # Definimos el nombre del ícono dependiendo del SO
+        ICON_PATH="cartas/1-de-espada.ico"
+        if [ "${{ matrix.os }}" == "macos-latest" ]; then
+          # Mac usa .icns, necesitarías crear este archivo y subirlo
+          ICON_PATH="cartas/1-de-espada.icns"
+        fi
+        
+        pyinstaller --onefile --windowed --name "JuegoTruco" --icon "$ICON_PATH" \
+        --add-data "cartas:cartas" \
+        --add-data "audio:audio" \
+        --add-data "archivos:archivos" \
+        main.py
+
+    - name: 5. Empaquetar los archivos (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        Compress-Archive -Path dist/JuegoTruco.exe -DestinationPath JuegoTruco-windows.zip
+
+    - name: 5. Empaquetar los archivos (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        zip -r JuegoTruco-macos.zip dist/JuegoTruco.app
+
+    - name: 5. Empaquetar los archivos (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        zip -r JuegoTruco-linux.zip dist/JuegoTruco
+
+    - name: 6. Subir los archivos a la Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          JuegoTruco-windows.zip
+          JuegoTruco-macos.zip
+          JuegoTruco-linux.zip
