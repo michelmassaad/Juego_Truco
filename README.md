@@ -1,88 +1,76 @@
-# Juego de Truco Argentino
+# Juego de Truco Argentino - Trabajo Práctico
 
-¡Bienvenido al clásico juego de cartas argentino, el Truco, implementado en Python con Pygame!
+Este proyecto fue desarrollado como parte del trabajo práctico de la materia **Programación I** de la **Tecnicatura Universitaria en Programación** en la **Universidad Tecnológica Nacional (UTN), Facultad Regional Avellaneda**.
 
-Este proyecto te permite jugar una partida de Truco contra la computadora. Podrás cantar envido, truco, y poner a prueba tus habilidades en este emocionante juego de ingenio y engaño.
+El objetivo fue desarrollar una versión del juego de cartas **Truco** para dos jugadores (un jugador contra la máquina), aplicando los conceptos de la programación funcional y la librería Pygame.
 
-![Captura de pantalla del juego](https://i.imgur.com/tuqgI8a.png)  <!-- Reemplazar con una captura de pantalla real si es posible -->
+## Descripción del Juego
+
+El juego implementa una partida de Truco a 15 o 30 puntos, donde el usuario se enfrenta a un oponente controlado por la computadora. El sistema registra el nombre del jugador y actualiza un historial de puntajes al finalizar cada partida.
+
+### Modos de Oponente
+
+Se puede elegir entre dos tipos de oponentes, cada uno con una lógica de juego distinta:
+
+1.  **Oponente Aleatorio:**
+    -   Juega sus cartas de forma completamente aleatoria.
+    -   **Envido:** Si tiene envido (dos cartas del mismo palo), siempre lo canta. Si le cantan envido, siempre lo acepta. Si tiene más de 30 puntos de envido, canta "falta envido".
+
+2.  **Oponente Inteligente:**
+    -   **Truco:** Si juega primero, siempre juega su carta más alta. Si juega segundo y tiene una carta para empatar o ganar la mano, la juega; de lo contrario, juega su carta más baja.
+    -   **Envido:** Solo canta o acepta un envido si su puntaje es superior a 27 puntos.
+
+### Estado Actual del Proyecto
+
+-   [x] Lógica del **Truco** en todas sus variantes (Truco, Retruco, Vale 4).
+-   [x] Elección de oponente (Aleatorio o Inteligente).
+-   [x] Selección de puntaje máximo (15 o 30 puntos).
+-   [x] Sistema de historial de puntajes guardado en `archivos/historial.csv`.
+-   [ ] **Funcionalidad del Envido:** La lógica del envido está parcialmente implementada y se encuentra en desarrollo.
+
+## Contenidos y Tecnologías Aplicadas
+
+Para cumplir con las condiciones de aprobación del trabajo práctico, se aplicaron los siguientes conceptos:
+
+-   **Manejo avanzado de TDA:** Uso de listas, diccionarios, sets y tuplas para gestionar la baraja, las manos de los jugadores y el estado del juego.
+-   **Manejo de strings:** Para la interacción con el usuario y la presentación de información.
+-   **Lectura y escritura de archivos:** Para la persistencia del historial de puntajes en formato `.csv`.
+-   **Paradigma funcional:** Se priorizó el uso de funciones puras y la modularización del código.
+-   **Pygame:** Para la interfaz gráfica, se implementaron los siguientes elementos:
+    -   Ciclo de vida del juego y manejo de eventos.
+    -   Configuraciones de pantalla y posicionamiento de elementos.
+    -   Carga y manipulación de imágenes y superficies.
+    -   Uso de sonidos para mejorar la experiencia de usuario.
+    -   Manejo de colisiones para la interacción con botones y cartas.
 
 ## ¿Cómo Jugar?
 
-Tienes dos maneras de disfrutar del juego:
+### Ejecutando desde el Código Fuente
 
-### Opción 1: Usando el Ejecutable (Windows)
-
-La forma más sencilla de jugar. No necesitas instalar nada.
-
-1.  Ve a la sección de **Releases** en este repositorio de GitHub.
-2.  Descarga el archivo `Truco.exe` de la última versión.
-3.  Haz doble clic en el archivo `Truco.exe` y ¡a jugar!
-
-### Opción 2: Ejecutando desde el Código Fuente
-
-Si eres un desarrollador o prefieres ejecutarlo desde el código, sigue estos pasos.
-
-#### Prerrequisitos
-
--   Tener instalado Python 3.x en tu sistema. Puedes descargarlo desde [python.org](https://www.python.org/downloads/).
--   Tener `pip` (el gestor de paquetes de Python) disponible.
-
-#### Pasos
-
-1.  **Clona o descarga este repositorio:**
+1.  **Clona el repositorio:**
     ```bash
-    git clone https://github.com/tu-usuario/tu-repositorio.git
-    cd tu-repositorio
+    git clone <URL-del-repositorio>
+    cd <nombre-del-repositorio>
     ```
-    *(Reemplaza `tu-usuario/tu-repositorio` con la URL real de este repositorio)*
-
-2.  **Crea un entorno virtual (recomendado):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
-    ```
-
-3.  **Instala las dependencias:**
-    El único requisito es Pygame.
+2.  **Instala las dependencias:**
     ```bash
     pip install pygame
     ```
-
-4.  **Ejecuta el juego:**
+3.  **Ejecuta el juego:**
     ```bash
     python main.py
     ```
 
-## Para Desarrolladores: Crear tu Propio Ejecutable
+### Creando un Ejecutable (Windows)
 
-Si has hecho cambios en el código y quieres compilar tu propia versión del archivo `.exe`, puedes hacerlo usando **PyInstaller**.
+Para compilar un archivo `.exe` que no requiera tener Python instalado:
 
 1.  **Instala PyInstaller:**
     ```bash
     pip install pyinstaller
     ```
-
 2.  **Ejecuta el comando de compilación:**
-    Abre una terminal en la raíz del proyecto y ejecuta el siguiente comando:
-
     ```bash
-    # Para Windows
     pyinstaller --onefile --windowed --add-data "cartas;cartas" --add-data "audio;audio" --add-data "archivos;archivos" main.py
-
-    # Para macOS o Linux
-    pyinstaller --onefile --windowed --add-data "cartas:cartas" --add-data "audio:audio" --add-data "archivos:archivos" main.py
     ```
-
-3.  **Encuentra tu ejecutable:**
-    Una vez que el proceso termine, encontrarás el archivo `main.exe` (o `main` en Linux/macOS) dentro de la nueva carpeta `dist`.
-
-## Estructura del Proyecto
-
--   `main.py`: El punto de entrada principal del juego. Contiene el bucle del juego.
--   `funciones/`: Contiene la lógica del juego (creación de la baraja, reglas, etc.).
--   `informacion/`: Contiene las constantes y datos del juego (colores, rutas de archivos, etc.).
--   `cartas/`: Contiene las imágenes de las cartas.
--   `audio/`: Contiene los archivos de sonido.
--   `archivos/`: Contiene el `historial.csv` para guardar las puntuaciones.
-
-¡Que te diviertas!
+3.  El archivo `main.exe` estará disponible en la carpeta `dist`.
