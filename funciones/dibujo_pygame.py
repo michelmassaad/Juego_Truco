@@ -38,13 +38,14 @@ def dibujar_cartas_dorso(pantalla:any, mano:list, coordenadas:tuple, espacio:flo
         x += ancho + espacio 
     
 def mover_carta(pantalla:any, mano:list, coordenadas_inicial:tuple, espacio:float, tamano:tuple,
-                coordenadas_finales:tuple)-> None:
+                coordenadas_finales:tuple,sonido_lanzar_carta )-> None:
     '''Mueve sobre el eje y la carta desde una coordenada inicial a una coordenada final'''
     ancho,alto = tamano
     (x,y) = coordenadas_inicial
     (x_final,y_final) = coordenadas_finales
     velocidad = 5
     
+    sonido_lanzar_carta.play()
     for carta in mano:
         imagen_carta = cargar_imagen_carta(carta["ruta"], tamano)
         while y != y_final:
@@ -167,7 +168,7 @@ def repartir_carta(pantalla, carta, inicio, fin, cartas_sobre_mesa, area_cartas,
         # Dibujar carta en movimiento
         pantalla.blit(carta, (x_actual, y_actual))
         pg.display.flip()
-        pg.time.delay(10)
+        pg.time.delay(8)
 
     # Añadir la posición final de la carta a la lista de cartas sobre la mesa
     cartas_sobre_mesa.append(fin)

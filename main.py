@@ -99,7 +99,7 @@ while ejecutar_juego:
                 # Movimientos del jugador
                 estado_juego.turno_jugador, estado_juego.turno_computadora = mover_jugador(
                     evento, estado_juego.mano_jugador, estado_juego.lista_carta_seleccionada, estado_juego.turno_jugador,
-                    estado_juego.turno_computadora, PANTALLA)
+                    estado_juego.turno_computadora, PANTALLA,sonido_lanzar_carta)
                 
                 # Verificar evento botones
                 for texto, boton in botones_activos:
@@ -160,7 +160,7 @@ while ejecutar_juego:
         # Movimientos de la computadora
         estado_juego.turno_jugador, estado_juego.turno_computadora = mover_computadora(
         personaje_elegido, estado_juego.mano_computadora, estado_juego.lista_lanzada_computadora,estado_juego.lista_carta_seleccionada, estado_juego.turno_jugador,
-        estado_juego.turno_computadora, PANTALLA)
+        estado_juego.turno_computadora, PANTALLA, sonido_lanzar_carta)
 
         #Condicion para cuando quedan menos de 6 cartas en la baraja para que reinicie la baraja y 
         # no quedarse sin cartas de vuelta 

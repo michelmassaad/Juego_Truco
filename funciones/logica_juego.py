@@ -5,7 +5,7 @@ from informacion.posiciones_dibujo import *
 from informacion.colores import COLOR_FONDO
     
 def mover_jugador(evento:any, mano_jugador:list, lista_carta_seleccionada:list, turno_jugador:bool, turno_computadora:bool, 
-                  PANTALLA:any) -> tuple:
+                  PANTALLA:any, sonido_lanzar_carta) -> tuple:
     """Maneja el movimiento de las cartas del jugador."""
     if turno_jugador:
         for carta in mano_jugador:
@@ -15,7 +15,7 @@ def mover_jugador(evento:any, mano_jugador:list, lista_carta_seleccionada:list, 
 
                 pg.draw.rect(PANTALLA, COLOR_FONDO, carta["rect"])
                 mover_carta(PANTALLA, lista_carta_seleccionada, coordenadas_j, espacio, tamano_cartas,
-                            coordenadas_mesa_jugador)
+                            coordenadas_mesa_jugador,sonido_lanzar_carta)
 
                 turno_jugador = False
                 turno_computadora = True
@@ -24,7 +24,7 @@ def mover_jugador(evento:any, mano_jugador:list, lista_carta_seleccionada:list, 
 
 
 def mover_computadora(personaje_elegido:dict, mano_computadora:list, lista_lanzada_computadora:list,
-                      lista_carta_seleccionada:list, turno_jugador:bool, turno_computadora:bool, PANTALLA:any) -> tuple:
+                      lista_carta_seleccionada:list, turno_jugador:bool, turno_computadora:bool, PANTALLA:any,sonido_lanzar_carta) -> tuple:
     """Maneja el movimiento de las cartas de la computadora."""
     if turno_computadora:
         for carta_lanzada_computadora in mano_computadora:
@@ -37,7 +37,7 @@ def mover_computadora(personaje_elegido:dict, mano_computadora:list, lista_lanza
                 pg.time.wait(800)
                 pg.draw.rect(PANTALLA, COLOR_FONDO, carta_lanzada_computadora["rect"])
                 mover_carta(PANTALLA, lista_lanzada_computadora, coordenadas_c, espacio, tamano_cartas, 
-                            coordenadas_mesa_computadora)
+                            coordenadas_mesa_computadora,sonido_lanzar_carta)
 
                 turno_jugador = True
                 turno_computadora = False
